@@ -25,6 +25,7 @@ return {
       vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP hover information" })
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP got to definition" })
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP code action" })
+      vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP rename" })
     end,
   },
 }
