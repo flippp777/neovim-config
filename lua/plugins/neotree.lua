@@ -17,6 +17,6 @@ return {
     }
   },
   config = function()
-    vim.keymap.set('n', '<leader>e', ':Neotree filesystem reveal left toggle<CR>', { desc = 'Neotree file explorer' })
+    vim.keymap.set('n', '<leader>E', ':Neotree filesystem reveal left toggle<CR>', { desc = 'Neotree file explorer' })
   end
 }
