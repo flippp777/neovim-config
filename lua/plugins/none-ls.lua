@@ -6,7 +6,7 @@ return {
 			sources = {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.clang_format.with({
-          extra_args = { "-style=GNU" }
+          extra_args = { "-style=LLVM" }
         }),
 				null_ls.builtins.formatting.black,
 				null_ls.builtins.formatting.isort,
