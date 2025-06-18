@@ -23,7 +23,6 @@ return {
       lspconfig.clangd.setup({ capabilities = capabilities })
       lspconfig.pyright.setup({ capabilities = capabilities })
       lspconfig.rust_analyzer.setup({ capabilities = capabilities })
-      lspconfig.jdtls.setup({ capabilities = capabilities })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP hover information" })
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP got to definition" })
