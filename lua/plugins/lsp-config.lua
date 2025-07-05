@@ -30,6 +30,10 @@ return {
       vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "LSP go to references" })
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP code action" })
       vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP rename" })
+      vim.keymap.set('n', '<leader>D',vim.diagnostic.open_float, {desc = "Diagnostics"})
+      vim.keymap.set('n', '<leader>d[', function() vim.diagnostic.goto_prev() end, {desc = "prev diagnostics"})
+      vim.keymap.set('n', '<leader>d]', function() vim.diagnostic.goto_next() end, {desc = "next diagnostics"})
+      vim.keymap.set('n', '<leader>dd',"<cmd>Telescope diagnostics<cr>", {desc = "Telescope diagnostics"})
     end,
   },
 }
