@@ -18,12 +18,12 @@ return {
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({ capabilities = capabilities })
-      lspconfig.clangd.setup({ capabilities = capabilities })
-      lspconfig.pyright.setup({ capabilities = capabilities })
-      lspconfig.rust_analyzer.setup({ capabilities = capabilities })
-      lspconfig.zls.setup({ capabilities = capabilities })
+      local lspconfig = vim.lsp.enable
+      lspconfig("lua_ls", { capabilities = capabilities })
+      lspconfig("clangd", { capabilities = capabilities })
+      lspconfig("pyright", { capabilities = capabilities })
+      lspconfig("rust_analyzer", { capabilities = capabilities })
+      lspconfig("zls", { capabilities = capabilities })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP hover information" })
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP got to definition" })
