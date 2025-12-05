@@ -5,6 +5,8 @@ vim.cmd("set shiftwidth=2")
 
 vim.cmd("set relativenumber")
 
+vim.cmd("set cursorline")
+
 
 -- Window keybinds
 vim.keymap.set("n", "<C-h>", "<C-w>h")
