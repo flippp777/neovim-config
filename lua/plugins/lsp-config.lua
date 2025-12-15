@@ -18,19 +18,16 @@ return {
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      local lspconfig = require("lspconfig")
-
       local function on_attach(client, bufnr)
         if client.name == "clangd" then
           client.server_capabilities.documentFormattingProvider = false
         end
       end
 
-      lspconfig.lua_ls.setup({ capabilities = capabilities, on_attach = on_attach })
-      lspconfig.clangd.setup({ capabilities = capabilities, on_attach = on_attach })
-      lspconfig.pyright.setup({ capabilities = capabilities, on_attach = on_attach })
-      lspconfig.rust_analyzer.setup({ capabilities = capabilities, on_attach = on_attach })
-      lspconfig.zls.setup({ capabilities = capabilities, on_attach = on_attach })
+      for _, server in ipairs({ "lua_ls", "clangd", "pyright", "rust_analyzer", "zls" }) do
+        vim.lsp.config(server, { capabilities = capabilities, on_attach = on_attach })
+        vim.lsp.enable(server)
+      end
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP hover information" })
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP got to definition" })
