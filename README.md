@@ -16,3 +16,7 @@ git clone https://github.com/flippp777/neovim-config ~/.config/nvim
 ```
 
 Plugins install automatically on first start.
+
+## License
+
+[MIT](LICENSE)
